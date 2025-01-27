@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="1 ~ 5까지 입력하세요">
+  <button>입력</button>
+</body>
+<script>
+  // 사용자에게 1 ~ 5까지 숫자를 받아서 * 10을 해주는 프로그램
+  // 결과값은 콘솔에 출력한다.
+  // 단 사용자는 숫자 이외의 값을 입력할 수 있다.
+  // 런타임 오류가 발생했다면, "다시 입력하세요"라는 알림창을 띄운다.
+
+  try {
+    const exampleMessage = "1~5까지 입력하세요"
+    const input = prompt(exampleMessage)
+    const result = input * 10
+    console.log(result)
+    } catch (error) {
+      if(error instanceof SyntaxError) {
+        console.error("다시 입력하세요.")
+      }else {
+        console.error("prompt error", error)
+      }
+    }
+
+
+</script>
+</html>

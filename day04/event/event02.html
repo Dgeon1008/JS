@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클릭 유효성 검사</title>
+</head>
+<body>
+  <form>
+    <div>
+      <span>아이디</span><input type="text" name="id" placeholder="아이디를 입력하세요.">
+    </div>
+    <p id="id-result"></p>
+    <div>
+      <span>비밀번호</span><input type="password" name="password" placeholder="비밀번호를 입력하세요.">
+    </div>
+    <p id="pwd-result"></p>
+    <button type="button">전송</button>
+    <!-- type="submit" 전송 -->
+  </form>
+</body>
+<script>
+  const button = document.querySelector("button")
+  const id = document.querySelector("input[name='id']")
+  const idResult = document.querySelector("#id-result")
+  const password = document.querySelector("input[name='password']")
+  const pwdResult = document.querySelector("#pwd-result")
+  const form = document.querySelector("form")
+
+  button.addEventListener("click",() => {
+    if(!id.value && !password.value) {
+      idResult.innerText = "아이디를 입력하세요."
+      idResult.style.color = "red"
+      pwdResult.innerText = "비밀번호를 입력하세요."
+      pwdResult.style.color = "red"
+      return;
+    }
+    idResult.innerText = "멋진 아이디네요."
+    idResult.style.color = "blue"
+    pwdResult.innerText = "멋진 비밀번호네요."
+    pwdResult.style.color = "blue"
+    
+
+    // 1) id input 값이 있는지 없는지 검사
+    if(!id.value) {
+      idResult.innerText = "아이디를 입력하세요."
+      idResult.style.color = "red"
+      return;
+    }
+    idResult.innerText = "멋진 아이디네요."
+    idResult.style.color = "blue"
+    
+
+    // 2) password input 값이 있는지 없는지 검사
+    if(!password.value) {
+      pwdResult.innerHTML = "<h1>비밀번호를 입력하세요.</h>"
+      pwdResult.style.color = "red"
+      return;
+    }
+    pwdResult.innerText = "멋진 비밀번호네요."
+    pwdResult.style.color = "blue"
+
+    alert("로그인 완료")
+    form.submit
+  })
+  
+</script>
+</html>

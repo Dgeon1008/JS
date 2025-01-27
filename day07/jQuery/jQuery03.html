@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery03</title>
+</head>
+<body>
+  <!-- <div>
+    <div class="box"style="width: 100px; height: 100px; background-color: orange;"></div>
+    <button>사라져라~!🙂</button>
+  </div>
+  <input type="checkbox" name="test"><span>동의</span> -->
+
+  <form name="myForm">
+    <div>
+        <label>
+            전체 동의
+            <input type="checkbox" name="term1" class="all">
+        </label>
+    </div>
+    <div>
+        <label>
+            서비스 이용약관 동의
+            <input type="checkbox" name="term1" class="term">
+        </label>
+    </div>
+    <div>
+        <label>
+            광고 수신 동의
+            <input type="checkbox" name="term2" class="term">
+        </label>
+    </div>
+    <div>
+        <label>
+            개인 정보 이용약관 동의
+            <input type="checkbox" name="term3" class="term">
+        </label>
+    </div>
+  </form>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  const $all = $("input.all")
+  const $terms = $("input.term")
+  const $div = $("div")
+  
+  $all.on("click", (e) => {
+    $term.prop("checked", e.target.checked)
+  })
+
+  $term.on("click",(e) => {
+    $all.prop("checked", $term.filter(":checked").length === 3)
+  })
+
+
+
+  // const all = document.querySelector("input.all")
+  // const terms = document.querySelectorAll("input.term")
+
+  // all.addEventListener("click", (e) => {
+  //   let target = e.target;
+  //   terms.forEach((term) => {
+  //     term.checked = target.checked
+  //   })
+  // })
+    
+  // terms.forEach((term) => {
+  //   term.addEventListener("click", (e) => {
+  //     let target = e.target;
+  //     console.log(terms.map((term) => term.checked).filter((checked) => checked).length === 3)
+  //     all.checked = terms.map((term) => term.checked).filter((checked) => checked).length === 3
+  //   })
+  // })
+
+
+  // .prop() : JS로 수정된 요소의 값을 가져오고 싶을 때
+  // .attr() : HTML의 속성을 가지고 오고 싶을 때 (태그의 속성을 가져오고 싶을 때)
+  // .on("이벤트명", () => {})
+  // const $button = $("button")
+  // const $box = $(".box")
+  // const $input = $("input")
+
+  // $button.on("click", () => {
+  //   console.log($input.prop("checked"))
+  //   console.log($input.attr("checked"))
+  //   console.log($input.prop("class"))
+  //   console.log($input.attr("class"))
+  // })
+
+</script>
+</html>

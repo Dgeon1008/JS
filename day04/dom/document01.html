@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클래스 이름을 이용한 선택</title>
+</head>
+<body>
+  <ul>
+    <li class="item odd">첫 번째 아이템이에요.</li>
+    <li class="item even">두 번째 아이템이에요.</li>
+    <li class="item odd">세 번째 아이템이에요.</li>
+    <li class="item even">네 번째 아이템이에요.</li>
+    <li class="item odd">다섯 번째 아이템이에요.</li>
+  </ul>
+</body>
+<script>
+  // HTMLCollection
+  // 그냥 접근하면 객체, 프로토타입으로 접근하기
+  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+  
+  const item = document.getElementsByClassName("item")
+  const colors = {
+    'even' : 'green',
+    'odd' : 'pink'
+  }
+
+  // 홀수는 핑크색, 짝수는 녹색
+  item.forEach((item) => {
+    item.style.color = colors[item.classList[1]]
+  })
+</script>
+</html>
